@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kyverno
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+
+spec:
+  destination:
+    namespace: 'kyverno'
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: k8s/kyverno/overlays/engineering-eks
+    repoURL: 'https://mtcuk@dev.azure.com/mtcuk/engineering/_git/kubernetes'
+    targetRevision: HEAD
+  project: default
+  syncPolicy:
+    syncOptions:     # Sync options which modifies sync behavior
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
