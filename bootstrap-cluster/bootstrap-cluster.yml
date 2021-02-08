@@ -7,7 +7,8 @@ spec:
     server: 'https://kubernetes.default.svc'
     namespace: argocd
   source:
-    repoURL: 'https://github.com/Staggerlee011/argocd-app-in-app-example.git'
+    path: bootstrap-cluster
+    repoURL: 'https://github.com/Staggerlee011/argocd-app-in-app-example'
     targetRevision: HEAD
   project: default
   syncPolicy:

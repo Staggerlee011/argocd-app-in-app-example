@@ -12,5 +12,7 @@ The example deploys `kyverno` and `sealedsecrets` via `kustomize`
 - deploy the bootstrap-cluster file:
 
 ``` bash
-kubectl apply -f bootstrap-cluster/bootstrap-cluster.yml
+kubectl apply -f bootstrap-cluster/bootstrap-cluster.yml -n argocd
 ```
+
+![syncing apps](images/init-sync.PNG)

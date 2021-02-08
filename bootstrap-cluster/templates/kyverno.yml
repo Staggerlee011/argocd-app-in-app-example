@@ -11,8 +11,8 @@ spec:
     namespace: 'kyverno'
     server: 'https://kubernetes.default.svc'
   source:
-    path: k8s/kyverno/overlays/engineering-eks
-    repoURL: 'https://mtcuk@dev.azure.com/mtcuk/engineering/_git/kubernetes'
+    path: kyverno/overlays/dev
+    repoURL: 'https://github.com/Staggerlee011/argocd-app-in-app-example'
     targetRevision: HEAD
   project: default
   syncPolicy:
